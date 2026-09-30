@@ -1,0 +1,142 @@
+{
+ "crps": {
+  "level": 0.03,
+  "scheme": "group",
+  "learners_averaged": [
+   "qrf",
+   "tabm"
+  ],
+  "results": [
+   {
+    "contrast": "structured vs chained",
+    "target": "cec",
+    "learners": "average",
+    "diff": -0.11651707585495084,
+    "lo": -0.32661130085917006,
+    "hi": 0.09357714914926836,
+    "n_folds": 3,
+    "p_fold_t": 0.13973267636120276
+   },
+   {
+    "contrast": "structured vs chained",
+    "target": "n",
+    "learners": "average",
+    "diff": -0.0044087488972106015,
+    "lo": -0.6647959199746665,
+    "hi": 0.6559784221802452,
+    "n_folds": 3,
+    "p_fold_t": 0.9796928737867664
+   },
+   {
+    "contrast": "structured vs chained",
+    "target": "mean",
+    "learners": "average",
+    "diff": -0.06046291237608072,
+    "lo": -0.36774331255975024,
+    "hi": 0.2468174878075888,
+    "n_folds": 3,
+    "p_fold_t": 0.4863540047775228
+   },
+   {
+    "contrast": "structured_ya vs chained",
+    "target": "cec",
+    "learners": "average",
+    "diff": -0.11270535773131946,
+    "lo": -0.3494036822272285,
+    "hi": 0.12399296676458957,
+    "n_folds": 3,
+    "p_fold_t": 0.1770300813179441
+   },
+   {
+    "contrast": "structured_ya vs chained",
+    "target": "n",
+    "learners": "average",
+    "diff": 0.03728856533833665,
+    "lo": -0.4332790651755524,
+    "hi": 0.5078561958522257,
+    "n_folds": 3,
+    "p_fold_t": 0.7656274231687163
+   },
+   {
+    "contrast": "structured_ya vs chained",
+    "target": "mean",
+    "learners": "average",
+    "diff": -0.037708396196491405,
+    "lo": -0.1917123445829504,
+    "hi": 0.11629555218996757,
+    "n_folds": 3,
+    "p_fold_t": 0.40259468286808814
+   }
+  ]
+ },
+ "crps_log": {
+  "level": 0.03,
+  "scheme": "group",
+  "learners_averaged": [
+   "qrf",
+   "tabm"
+  ],
+  "results": [
+   {
+    "contrast": "structured vs chained",
+    "target": "cec",
+    "learners": "average",
+    "diff": -0.06786735220150124,
+    "lo": -0.2908545250230472,
+    "hi": 0.1551198206200447,
+    "n_folds": 3,
+    "p_fold_t": 0.3205700042964555
+   },
+   {
+    "contrast": "structured vs chained",
+    "target": "n",
+    "learners": "average",
+    "diff": 0.02665260872073653,
+    "lo": -0.632803225626396,
+    "hi": 0.686108443067869,
+    "n_folds": 3,
+    "p_fold_t": 0.8779559467521895
+   },
+   {
+    "contrast": "structured vs chained",
+    "target": "mean",
+    "learners": "average",
+    "diff": -0.020607371740382352,
+    "lo": -0.3351906690742041,
+    "hi": 0.2939759255934394,
+    "n_folds": 3,
+    "p_fold_t": 0.804543595605726
+   },
+   {
+    "contrast": "structured_ya vs chained",
+    "target": "cec",
+    "learners": "average",
+    "diff": -0.07007006965534324,
+    "lo": -0.2928105240617704,
+    "hi": 0.1526703847510839,
+    "n_folds": 3,
+    "p_fold_t": 0.3085613655000733
+   },
+   {
+    "contrast": "structured_ya vs chained",
+    "target": "n",
+    "learners": "average",
+    "diff": 0.05458805386314486,
+    "lo": -0.47838469204948836,
+    "hi": 0.5875607997757781,
+    "n_folds": 3,
+    "p_fold_t": 0.702497636791788
+   },
+   {
+    "contrast": "structured_ya vs chained",
+    "target": "mean",
+    "learners": "average",
+    "diff": -0.007741007896099189,
+    "lo": -0.2211021277494632,
+    "hi": 0.20562011195726482,
+    "n_folds": 3,
+    "p_fold_t": 0.890283059536511
+   }
+  ]
+ }
+}

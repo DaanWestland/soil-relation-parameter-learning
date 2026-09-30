@@ -1,0 +1,22 @@
+{
+ "qrf": {
+  "per_target": {
+   "cec": 0.03450970648329216,
+   "n": 0.019505568308295574
+  },
+  "n_sites": 20198,
+  "n_units": 30,
+  "note": "exploratory; the primary inference is the fold-level t-interval (section 1)",
+  "estimate_equal_weight": 0.027007637395793854,
+  "se": 0.008409634100482172,
+  "df": 4,
+  "p_t": 0.03254208077890254,
+  "converged": true,
+  "boundary": true,
+  "warnings": [
+   "Maximum Likelihood optimization failed to converge",
+   "Retrying MixedLM optimization with lbfgs",
+   "The MLE may be on the boundary of the parameter space"
+  ]
+ }
+}

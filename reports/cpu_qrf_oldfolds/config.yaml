@@ -1,0 +1,31 @@
+name: cpu_qrf
+n_folds: 5
+folds:
+- 0
+- 1
+- 2
+- 3
+- 4
+levels:
+- 1.0
+- 0.3
+- 0.1
+- 0.03
+group_reps: 3
+random_reps: 3
+m: 100
+k_chain: 20
+residual: true
+gate: true
+min_train: 30
+seed: 2026
+abundant:
+  n_estimators: 300
+gate_model:
+  n_estimators: 300
+learners:
+  qrf:
+    n_estimators: 300
+    min_samples_leaf: 5
+    max_features: 0.33
+subsample: null

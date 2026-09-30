@@ -1,0 +1,51 @@
+pedopilot: third-party data and models
+=====================================
+
+The MIT licence in LICENSE covers the code only. The data table and the model weights below come from
+third parties under their own terms. Check those terms before redistributing them or using them
+commercially.
+
+1. data_snapshot/conus_0_30.parquet (NOT included in this repository)
+---------------------------------------------------------------------
+The exact table every published run used (28,192 soil profiles, conterminous USA, 0-30 cm). It is not
+distributed here because of the terms below; see data_snapshot/README.md.
+sha256 7a890cb6be3d858894c48cd48c9c28c45aedeec42f335a278c9d42a4473ee624 (checked by the code; also in
+src/pedopilot/paths.py). Built with `python -m pedopilot prep` (src/pedopilot/data.py) and added to the
+repository on 2026-09-27.
+
+Derived from:
+* WoSIS "latest" (ISRIC - World Soil Information), downloaded from the ISRIC WFS before the snapshot date:
+  layers clay, orgc, phaq, nitkjd, cecph7 and tceq, aggregated to 0-30 cm per profile. WoSIS data carry
+  the licence of each source dataset. Source datasets in the table (column dataset_id): US-NCSS (27,878
+  profiles), WD-WISE (291), WD-ISIS (20), CA-CanSIS (2), MX-INEGI (1). ISRIC documents the licence of
+  each source dataset (mostly CC BY or CC BY-NC): verify it for each dataset above.
+  Reference: Batjes, N. H., Calisto, L. and de Sousa, L. M. (2024). Providing quality-assessed and
+  standardised soil data to support global mapping and modelling (WoSIS snapshot 2023). Earth System
+  Science Data 16, 4735-4765.
+* WorldClim 2.1 (Fick and Hijmans 2017): the 19 bioclimatic variables (5 arc-minutes) and elevation
+  (2.5 arc-minutes), sampled at the profile locations (columns bio1-bio19, elev, slope, relief). Check
+  the terms of use on worldclim.org before redistributing values derived from WorldClim.
+  Reference: Fick, S. E. and Hijmans, R. J. (2017). WorldClim 2: new 1-km spatial resolution climate
+  surfaces for global land areas. International Journal of Climatology 37, 4302-4315.
+
+WorldClim 2.1 terms (worldclim.org, checked 2026-09-30): "freely available for academic use and other
+non-commercial use. Redistribution or commercial use is not allowed without prior permission." They do not say
+whether point values extracted from the grids count as redistribution, and WoSIS source datasets other than
+US-NCSS (314 profiles) may carry non-commercial terms. The table is therefore kept out of the public
+repository. Anyone can rebuild an equivalent table with `download` and `prep` (a rebuilt table differs from the
+snapshot because WoSIS "latest" changes over time), and the exact table can be shared with researchers on
+request, subject to these terms.
+
+2. TabICLv2 regressor checkpoint (models/tabicl-regressor-v2-20260212.ckpt)
+---------------------------------------------------------------------------
+Downloaded by `python -m pedopilot download --tabicl-only` from huggingface.co/jingang/TabICL, or by
+the tabicl package at first use; not included in the repository. TabICL (Inria SODA team): the tabicl
+code is released under the BSD-3-Clause licence (package metadata), and the Hugging Face model
+repository jingang/TabICL is tagged BSD-3-Clause (checked 2026-09-30; re-check the model card before
+redistributing the weights).
+
+3. Python packages
+------------------
+The code depends on packages under their own licences, among them tabicl 2.2.0 (BSD-3-Clause) and
+tabm 0.0.3 (Yandex Research; Apache-2.0), as stated in their package metadata. Nothing from them is
+included in this repository.

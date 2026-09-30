@@ -1,0 +1,25 @@
+# Fallback ONLY if TabICLv2 keeps running out of memory in gpu_quick despite the automatic fallbacks
+# (smaller cache, halved prediction chunks). Identical to gpu_quick except the two TabICL memory
+# settings (kv_cache repr, batch_size 4): same design, slower. A new name means all 50
+# configurations run again (the results folder follows `name:`). Never used for a published run.
+# 5 folds x (1 + 3 levels x (2 group + 1 random)) = 50 configurations x 2 targets x 3 learners.
+name: gpu_quick_lowmem
+n_folds: 5
+folds: [0, 1, 2, 3, 4]
+levels: [1.0, 0.3, 0.1, 0.03]
+group_reps: 2
+random_reps: 1
+m: 100
+k_chain: 20
+residual: true
+gate: true
+cec_weight_power: 1.0      # CEC parameter weights clay^1: consistent with CRPS/pinball losses (docs/DESIGN.md)
+min_train: 30
+seed: 2026
+abundant: {n_estimators: 300}
+gate_model: {n_estimators: 300}
+learners:
+  qrf: {n_estimators: 300, min_samples_leaf: 5, max_features: 0.33}
+  tabm: {device: auto, k: 32, d_block: 512, n_blocks: 2, d_embedding: 16, lr: 0.001, wd: 0.0003,
+         max_epochs: 200, patience: 16, batch: 256}
+  tabicl: {device: auto, n_estimators: 8, max_ctx: 48000, kv_cache: repr, batch_size: 4}

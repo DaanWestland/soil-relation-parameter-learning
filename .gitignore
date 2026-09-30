@@ -1,0 +1,31 @@
+# data, models and results are recreated by the pipeline (see README)
+data/
+models/
+results/
+*.parquet
+*.ckpt
+*.tif
+*.zip
+
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+.ipynb_checkpoints/
+wandb/
+
+# logs
+*.log
+
+# LaTeX build files
+*.aux
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# local tool settings and run logs
+.claude/
+logs/

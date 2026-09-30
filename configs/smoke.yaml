@@ -1,0 +1,21 @@
+# A few minutes on a CPU: checks that the whole pipeline runs end to end (QRF and a small TabM on a
+# subsample of one fold). Not bit-reproducible, because TabM training is not (README, Determinism).
+name: smoke
+n_folds: 5
+folds: [0]
+levels: [1.0, 0.1]
+group_reps: 1
+random_reps: 1
+m: 100
+k_chain: 20
+residual: true
+gate: true
+min_train: 30
+seed: 2026
+subsample: 0.35
+allow_cpu: true          # TabM on a CPU: fine for a smoke test
+abundant: {n_estimators: 100}
+gate_model: {n_estimators: 100}
+learners:
+  qrf: {n_estimators: 100}
+  tabm: {device: auto, k: 8, d_block: 128, n_blocks: 2, max_epochs: 25, patience: 5, batch: 256}

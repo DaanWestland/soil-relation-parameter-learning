@@ -1,0 +1,87 @@
+{
+ "qrf": {
+  "per_target": {
+   "cec": 0.03385149098885549,
+   "n": 0.004853730204583497
+  },
+  "n_sites": 20198,
+  "n_units": 50,
+  "note": "exploratory; the primary inference is the fold-level t-interval (section 1)",
+  "estimate_equal_weight": 0.019352610596719493,
+  "se": 0.006109627256835802,
+  "df": 4,
+  "p_t": 0.03393707021212753,
+  "converged": true,
+  "boundary": true,
+  "warnings": [
+   "The MLE may be on the boundary of the parameter space"
+  ]
+ },
+ "tabm": {
+  "per_target": {
+   "cec": 0.026627839020989613,
+   "n": -0.0001563464704220266
+  },
+  "n_sites": 20198,
+  "n_units": 50,
+  "note": "exploratory; the primary inference is the fold-level t-interval (section 1)",
+  "estimate_equal_weight": 0.01323574627528379,
+  "se": 0.008860129183909512,
+  "df": 4,
+  "p_t": 0.20951583092606046,
+  "converged": false,
+  "boundary": true,
+  "warnings": [
+   "Gradient optimization failed, |grad| = 2",
+   "Maximum Likelihood optimization failed to converge",
+   "MixedLM optimization failed, trying a different optimizer may help",
+   "Retrying MixedLM optimization with cg",
+   "Retrying MixedLM optimization with lbfgs",
+   "The Hessian matrix at the estimated parameter values is not positive definite",
+   "The MLE may be on the boundary of the parameter space"
+  ]
+ },
+ "tabicl": {
+  "per_target": {
+   "cec": 0.0044679045060630005,
+   "n": 0.032937895222856936
+  },
+  "n_sites": 20198,
+  "n_units": 50,
+  "note": "exploratory; the primary inference is the fold-level t-interval (section 1)",
+  "estimate_equal_weight": 0.018702899864459967,
+  "se": 0.0319448072151106,
+  "df": 4,
+  "p_t": 0.5896669856303702,
+  "converged": false,
+  "boundary": true,
+  "warnings": [
+   "Gradient optimization failed, |grad| = 1",
+   "Maximum Likelihood optimization failed to converge",
+   "MixedLM optimization failed, trying a different optimizer may help",
+   "Retrying MixedLM optimization with cg",
+   "Retrying MixedLM optimization with lbfgs",
+   "The MLE may be on the boundary of the parameter space"
+  ]
+ },
+ "tabicl_ft": {
+  "per_target": {
+   "cec": 0.003940301848363162,
+   "n": 0.015432450463988903
+  },
+  "n_sites": 20198,
+  "n_units": 50,
+  "note": "exploratory; the primary inference is the fold-level t-interval (section 1)",
+  "estimate_equal_weight": 0.00968637615617603,
+  "se": 0.018068377625082264,
+  "df": 4,
+  "p_t": 0.6203159183225639,
+  "converged": true,
+  "boundary": true,
+  "warnings": [
+   "Maximum Likelihood optimization failed to converge",
+   "Retrying MixedLM optimization with lbfgs",
+   "The MLE may be on the boundary of the parameter space"
+  ]
+ }
+}

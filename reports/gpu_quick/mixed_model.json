@@ -1,0 +1,71 @@
+{
+ "qrf": {
+  "per_target": {
+   "cec": 0.035283446695634844,
+   "n": 0.020962654883339683
+  },
+  "n_sites": 20198,
+  "n_units": 20,
+  "note": "exploratory; the primary inference is the fold-level t-interval (section 1)",
+  "estimate_equal_weight": 0.02812305078948726,
+  "se": 0.01006569997725559,
+  "df": 4,
+  "p_t": 0.04911370257967052,
+  "converged": false,
+  "boundary": true,
+  "warnings": [
+   "Gradient optimization failed, |grad| = 0",
+   "Maximum Likelihood optimization failed to converge",
+   "MixedLM optimization failed, trying a different optimizer may help",
+   "Retrying MixedLM optimization with cg",
+   "Retrying MixedLM optimization with lbfgs",
+   "The MLE may be on the boundary of the parameter space"
+  ]
+ },
+ "tabm": {
+  "per_target": {
+   "cec": 0.03535027631077615,
+   "n": -0.014687915450483119
+  },
+  "n_sites": 20198,
+  "n_units": 20,
+  "note": "exploratory; the primary inference is the fold-level t-interval (section 1)",
+  "estimate_equal_weight": 0.010331180430146513,
+  "se": 0.018879932200476596,
+  "df": 4,
+  "p_t": 0.61333555893756,
+  "converged": false,
+  "boundary": true,
+  "warnings": [
+   "Gradient optimization failed, |grad| = 1",
+   "Maximum Likelihood optimization failed to converge",
+   "MixedLM optimization failed, trying a different optimizer may help",
+   "Retrying MixedLM optimization with cg",
+   "Retrying MixedLM optimization with lbfgs",
+   "The MLE may be on the boundary of the parameter space"
+  ]
+ },
+ "tabicl": {
+  "per_target": {
+   "cec": 0.005392440453082239,
+   "n": 0.04442975726557135
+  },
+  "n_sites": 20198,
+  "n_units": 20,
+  "note": "exploratory; the primary inference is the fold-level t-interval (section 1)",
+  "estimate_equal_weight": 0.0249110988593268,
+  "se": 0.040908269391749824,
+  "df": 4,
+  "p_t": 0.5754462295152406,
+  "converged": false,
+  "boundary": true,
+  "warnings": [
+   "Gradient optimization failed, |grad| = 1",
+   "Maximum Likelihood optimization failed to converge",
+   "MixedLM optimization failed, trying a different optimizer may help",
+   "Retrying MixedLM optimization with cg",
+   "Retrying MixedLM optimization with lbfgs",
+   "The MLE may be on the boundary of the parameter space"
+  ]
+ }
+}

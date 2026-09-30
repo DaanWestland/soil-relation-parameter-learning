@@ -1,0 +1,21 @@
+# Full thinning grid with the forest learner only (CPU, roughly 30-60 min). Gives the QRF arms,
+# the fixed-theta PTF and all controls; the GPU configs add TabM and TabICLv2 on the same folds.
+# CEC7 parameter weights clay^2 (cec_weight_power default 2.0): the pre-specified design, kept as a
+# sensitivity check of the clay^1 weights used by gpu_full, gpu_quick, cpu_qrf_w1 and cpu_qrf_w1_s2
+# (also gpu_smoke, gpu_ft and the synthetic validation; docs/DESIGN.md, Deviation).
+name: cpu_qrf
+n_folds: 5
+folds: [0, 1, 2, 3, 4]
+levels: [1.0, 0.3, 0.1, 0.03]
+group_reps: 3
+random_reps: 3
+m: 100
+k_chain: 20
+residual: true
+gate: true
+min_train: 30
+seed: 2026
+abundant: {n_estimators: 300}
+gate_model: {n_estimators: 300}
+learners:
+  qrf: {n_estimators: 300, min_samples_leaf: 5, max_features: 0.33}

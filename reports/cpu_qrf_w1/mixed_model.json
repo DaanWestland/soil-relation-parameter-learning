@@ -1,0 +1,25 @@
+{
+ "qrf": {
+  "per_target": {
+   "cec": 0.023175913143842614,
+   "n": 0.011063001704593938
+  },
+  "n_sites": 20198,
+  "n_units": 30,
+  "note": "exploratory; the primary inference is the fold-level t-interval (section 1)",
+  "estimate_equal_weight": 0.017119457424218276,
+  "se": 0.008144840301502808,
+  "df": 4,
+  "p_t": 0.10343384596074219,
+  "converged": false,
+  "boundary": true,
+  "warnings": [
+   "Gradient optimization failed, |grad| = 1",
+   "Maximum Likelihood optimization failed to converge",
+   "MixedLM optimization failed, trying a different optimizer may help",
+   "Retrying MixedLM optimization with cg",
+   "Retrying MixedLM optimization with lbfgs",
+   "The MLE may be on the boundary of the parameter space"
+  ]
+ }
+}

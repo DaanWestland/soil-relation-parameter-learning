@@ -1,0 +1,26 @@
+# GPU pre-flight (about 15-30 min on one RTX 3080): every learner, incl. the fine-tuned TabICLv2 arm,
+# on the REAL table for one fold, with the gpu_quick settings (k_chain 20). It catches install, memory
+# and API problems before the long run, and its per-learner seconds (REPORT.md section 11) size the
+# gpu_quick run. Not used for any claim.
+name: gpu_smoke
+n_folds: 5
+folds: [0]
+levels: [1.0, 0.03]
+group_reps: 1
+random_reps: 1
+m: 100
+k_chain: 20
+residual: true
+gate: true
+cec_weight_power: 1.0      # CEC parameter weights clay^1: consistent with CRPS/pinball losses (docs/DESIGN.md)
+min_train: 30
+seed: 2026
+abundant: {n_estimators: 300}
+gate_model: {n_estimators: 300}
+learners:
+  qrf: {n_estimators: 300, min_samples_leaf: 5, max_features: 0.33}
+  tabm: {device: auto, k: 32, d_block: 512, n_blocks: 2, d_embedding: 16, lr: 0.001, wd: 0.0003,
+         max_epochs: 200, patience: 16, batch: 256}
+  tabicl: {device: auto, n_estimators: 8, max_ctx: 48000, kv_cache: true}
+  tabicl_ft: {device: auto, epochs: 8, learning_rate: 1.0e-5, patience: 4, n_estimators_inference: 8,
+              steps_per_epoch: 1, time_limit: 90, levels: [0.03]}

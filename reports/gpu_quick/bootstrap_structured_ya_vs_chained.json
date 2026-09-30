@@ -1,0 +1,20 @@
+{
+ "run": "gpu_quick",
+ "learner": "tabicl",
+ "level": 0.03,
+ "scheme": "group",
+ "contrast": "structured_ya vs chained",
+ "estimate": 0.04391779537097231,
+ "lo": 0.025952126718047773,
+ "hi": 0.06331327983827639,
+ "n_regions": 109,
+ "n_boot": 2000,
+ "folds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "note": "region (300 km) cluster bootstrap of held-out sites; replicates and targets averaged"
+}

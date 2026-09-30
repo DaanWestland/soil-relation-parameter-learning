@@ -1,0 +1,13 @@
+{
+ "run": "cpu_qrf",
+ "learner": "qrf",
+ "level": 0.03,
+ "scheme": "group",
+ "contrast": "structured_ya vs chained",
+ "estimate": 0.02512942746773086,
+ "lo": 0.010438295477133616,
+ "hi": 0.04116476356355299,
+ "n_regions": 109,
+ "n_boot": 2000,
+ "note": "region (300 km) cluster bootstrap of held-out sites; replicates and targets averaged"
+}

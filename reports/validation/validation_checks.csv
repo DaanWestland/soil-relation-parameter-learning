@@ -1,0 +1,24 @@
+scenario,learner,check,expect,value,ci,pass
+positive (relation holds),qrf,structured vs free at 3%,> 0.0,0.27928069566357466,"[+0.022, +0.536]",True
+positive (relation holds),qrf,structured vs chained at 3%,> 0.0,0.20588360078907278,"[+0.100, +0.312]",True
+positive (relation holds),qrf,structured_ya vs chained at 3%,> 0.0,0.2040163413408831,"[+0.102, +0.306]",True
+positive (relation holds),qrf,chained vs free at 3%,> 0.0,0.07339709487450187,"[-0.078, +0.225]",True
+positive (relation holds),qrf,structured vs chained at 100%,> -0.02,0.004672699183920381,"[-0.017, +0.027]",True
+positive (relation holds),qrf,oracle_ya skill >= structured skill at 3%,>= 0,0.1671178738185748,,True
+positive (relation holds),tabm,structured vs free at 3%,> 0.0,0.2890548171456579,"[+0.224, +0.354]",True
+positive (relation holds),tabm,structured vs chained at 3%,> 0.0,0.1762664678567122,"[+0.116, +0.236]",True
+positive (relation holds),tabm,structured_ya vs chained at 3%,> 0.0,0.16523910013546253,"[+0.017, +0.314]",True
+positive (relation holds),tabm,chained vs free at 3%,> 0.0,0.11278834928894567,"[+0.009, +0.217]",True
+positive (relation holds),tabm,structured vs chained at 100%,> -0.02,0.009285479787318252,"[-0.014, +0.033]",True
+positive (relation holds),tabm,oracle_ya skill >= structured skill at 3%,>= 0,0.13480108278855502,,True
+relation,qrf,free QRF 90% coverage,0.80-0.97,0.8581103222282905,,True
+"diagnostic (shared drivers, no relation)",qrf,structured vs chained at 3% (borrowing without a relation),report,0.12715885907462668,"[-0.018, +0.272]",True
+"diagnostic (shared drivers, no relation)",tabm,structured vs chained at 3% (borrowing without a relation),report,0.11248705185822494,"[-0.056, +0.281]",True
+shared,qrf,free QRF 90% coverage,0.80-0.97,0.8974188176519567,,True
+negative (independent drivers),qrf,structured_ya vs chained at 3%,<= 0.01,-0.09543909926309994,"[-0.157, -0.034]",True
+negative (independent drivers),qrf,structured vs chained at 3%,<= 0.01,-0.10840358620752599,"[-0.199, -0.018]",True
+negative (independent drivers),qrf,structured vs chained at 10%,<= 0.01,-0.06865033222910105,"[-0.167, +0.029]",True
+negative (independent drivers),tabm,structured_ya vs chained at 3%,<= 0.01,0.020022306870117135,"[-0.285, +0.325]",False
+negative (independent drivers),tabm,structured vs chained at 3%,<= 0.01,-0.012522238544635448,"[-0.545, +0.519]",True
+negative (independent drivers),tabm,structured vs chained at 10%,<= 0.01,-0.1078724810494736,"[-0.175, -0.041]",True
+independent,qrf,free QRF 90% coverage,0.80-0.97,0.8952539550374687,,True

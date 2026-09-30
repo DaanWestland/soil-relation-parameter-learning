@@ -1,0 +1,60 @@
+name: gpu_full
+n_folds: 5
+folds:
+- 0
+- 1
+- 2
+- 3
+- 4
+levels:
+- 1.0
+- 0.3
+- 0.1
+- 0.03
+group_reps: 5
+random_reps: 3
+m: 100
+k_chain: 100
+residual: true
+gate: true
+min_train: 30
+seed: 2026
+abundant:
+  n_estimators: 500
+gate_model:
+  n_estimators: 500
+learners:
+  qrf:
+    n_estimators: 500
+    min_samples_leaf: 5
+    max_features: 0.33
+  tabm:
+    device: auto
+    k: 32
+    d_block: 512
+    n_blocks: 2
+    d_embedding: 16
+    lr: 0.001
+    wd: 0.0003
+    max_epochs: 200
+    patience: 16
+    batch: 256
+  tabicl:
+    device: auto
+    n_estimators: 8
+    max_ctx: 48000
+    kv_cache: true
+  tabicl_ft:
+    device: auto
+    epochs: 60
+    learning_rate: 1.0e-05
+    patience: 8
+    n_estimators_inference: 8
+    steps_per_epoch: 1
+    time_limit: 90
+    levels:
+    - 0.1
+    - 0.03
+subsample: null
+allow_cpu: false
+cec_weight_power: 1.0

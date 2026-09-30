@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "soil-relation-parameter-learning"
+version = "0.3.0"
+description = "Predict sparse soil properties (total N, CEC7) by learning the bounded parameters of pedological relations: probabilistic, spatially validated benchmark with QRF, TabM and TabICLv2 on WoSIS data"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "Daan Westland"}]
+keywords = [
+    "digital soil mapping", "pedometrics", "pedotransfer functions", "parameter learning",
+    "knowledge-guided machine learning", "probabilistic prediction", "CRPS", "spatial cross-validation",
+    "tabular foundation models", "quantile regression forest", "WoSIS",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "pyarrow>=14",
+    "scikit-learn>=1.4",
+    "scoringrules>=0.8",
+    "rasterio>=1.3",               # only `prep` (rebuilding the table) needs it
+    "matplotlib>=3.8",
+    "pyyaml>=6",
+    "scipy>=1.11",
+    "tabulate>=0.9",
+    "torch>=2.2",                  # install a CUDA build first for the GPU runs (README)
+    "tabm==0.0.3",                 # tested version (TabMQuantile builds on its internals)
+    "rtdl_num_embeddings>=0.0.11,<0.1",
+    "tabicl==2.2.0",               # tested version (fine-tuning wrapper uses tabicl._finetune internals)
+]
+
+[project.urls]
+Homepage = "https://github.com/DaanWestland/soil-relation-parameter-learning"
+Repository = "https://github.com/DaanWestland/soil-relation-parameter-learning"
+Issues = "https://github.com/DaanWestland/soil-relation-parameter-learning/issues"
+Changelog = "https://github.com/DaanWestland/soil-relation-parameter-learning/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+finetune = ["transformers>=4.40"]
+stats = ["statsmodels>=0.14"]
+dev = ["pytest>=8"]
+
+[project.scripts]
+pedopilot = "pedopilot.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

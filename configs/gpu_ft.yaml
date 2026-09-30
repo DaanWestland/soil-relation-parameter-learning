@@ -1,0 +1,24 @@
+# Optional, after gpu_quick: does fine-tuning TabICLv2 (pinball loss, spatial validation split) change
+# the picture at the sparsest level? In-context vs fine-tuned TabICLv2 on the same folds and seeds as
+# gpu_quick, 3% of the sparse labels only (plus the 100% reference, which every run contains).
+# 5 folds x (1 + 2 group + 1 random) = 20 configurations. Needs: pip install transformers.
+name: gpu_ft
+n_folds: 5
+folds: [0, 1, 2, 3, 4]
+levels: [1.0, 0.03]
+group_reps: 2
+random_reps: 1
+m: 100
+k_chain: 20
+residual: true
+gate: true
+cec_weight_power: 1.0      # CEC parameter weights clay^1: consistent with CRPS/pinball losses (docs/DESIGN.md)
+min_train: 30
+seed: 2026
+abundant: {n_estimators: 300}
+gate_model: {n_estimators: 300}
+learners:
+  qrf: {n_estimators: 300, min_samples_leaf: 5, max_features: 0.33}
+  tabicl: {device: auto, n_estimators: 8, max_ctx: 48000, kv_cache: true}
+  tabicl_ft: {device: auto, epochs: 60, learning_rate: 1.0e-5, patience: 8, n_estimators_inference: 8,
+              steps_per_epoch: 1, time_limit: 90, levels: [0.03]}

@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: >-
+  If you use this code, please cite it as below, and cite the data (WoSIS, WorldClim) and the methods
+  it builds on (see README.md, Citation).
+title: >-
+  Soil relation parameter learning: predicting sparse soil chemistry through the bounded parameters of
+  pedological relations (a preliminary pilot)
+type: software
+authors:
+  - family-names: Westland
+    given-names: Daan
+version: 0.3.0
+date-released: 2026-09-30
+license: MIT
+repository-code: https://github.com/DaanWestland/soil-relation-parameter-learning
+url: https://github.com/DaanWestland/soil-relation-parameter-learning
+abstract: >-
+  A preliminary pilot on public data (not peer-reviewed). Sparse soil chemistry (total N, CEC7) is
+  predicted through the bounded parameters of pedological relations (C:N ratio, clay activity) pushed
+  through the relations with joint draws of abundant properties (clay, organic carbon, pH), and compared
+  with free and chained predictions for four learners (quantile regression forest, TabM, TabICLv2 in
+  context and fine-tuned) under spatial block cross-validation with controlled label thinning, on WoSIS
+  profiles of the conterminous USA (0-30 cm).
+keywords:
+  - digital soil mapping
+  - pedometrics
+  - pedotransfer functions
+  - parameter learning
+  - hybrid machine learning
+  - knowledge-guided machine learning
+  - probabilistic prediction
+  - CRPS
+  - spatial cross-validation
+  - tabular foundation models
+  - quantile regression forest
+  - WoSIS
+  - cation exchange capacity
+  - total nitrogen
