@@ -29,3 +29,13 @@ wandb/
 # local tool settings and run logs
 .claude/
 logs/
+
+# credentials and local settings: never commit
+.env
+.env.*
+*.pem
+*.key
+*.token
+.hf_token
+.huggingface/
+.claude/
